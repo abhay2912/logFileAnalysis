@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Predection</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class=>Find suspious request ! {{filePath}} </h1>
+                    <h2 class=>set date time according to your need {{name}} </h2>
+                    <form id="form">
+                        <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
+                        <button   button id="button" class="btn btn-secondary">show Prediction</button>
+                    </form>
+                </div>
+            </div>
+        <div>
+            {{name}}
+        </div>
+        <div>
+            {{data| safe}}
+        </div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+            <script>
+                $(function() {
+                  $('input[name="daterange"]').daterangepicker({
+                    opens: 'left'
+                  }, function(start, end, label) {
+                    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                  });
+                });
+            </script>
+    </div>
+        
+    </body>
+</html>>
