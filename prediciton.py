@@ -64,6 +64,9 @@ def prediciton(name):
     y_predict.columns = ["Detected"]
     # y_predict
     outputDF=pd.concat([df, y_predict], axis=1)
+    createCSV(outputDF, "predectedCSV")
+    numPredictedCSV= pd.concat([x, y_predict], axis=1)
+    createCSV(numPredictedCSV, "numPredictedCSV")
     return outputDF
 
 def createCSV(df, name):
