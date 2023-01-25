@@ -105,11 +105,11 @@ def upload_file():
             return redirect(url_for('CreatingDataset', filePath=filePath, fileName = secure_filename(file.filename)))
     return render_template('upload.html')
 
-# @app.route('/', methods=['GET', 'POST'])
-# def home():
-#     if request.method == 'POST':
-#         return redirect(url_for('CreatingDataset'))
-#     return render_template('index.html')
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        return redirect(url_for('CreatingDataset'))
+    return render_template('index.html')
 
 
 
