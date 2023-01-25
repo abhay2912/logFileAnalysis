@@ -49,12 +49,14 @@ def dataPreporcessing(df):
     # df2[8].fillna(value=mean_value, inplace=True)
     # df2.isna().sum()
     X=df2[[0,2,3,4,5,6, 7]] #Coloumns included are :- ip, request, Status, size, Referer.
-    return X
+    return df2
 
 def prediciton(name):
     # print(X) 
     df = pd.read_csv("C:\\Users\\user\\Documents\\LogfileJuypter\\regressionTree\\prediction\\{}.csv".format(name))
-    X = dataPreporcessing(df)   
+    x = dataPreporcessing(df)  
+    createCSV(x, "NumDataCSV")
+    X=x[[0,2,3,4,5,6, 7]] #Coloumns included are :- ip, request, Status, size, Referer. 
     # load_model = pickle.load(open(filename,'rb'))
     load_model.predict(X)
     y_predict = load_model.predict(X)
