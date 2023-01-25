@@ -37,6 +37,13 @@ app.add_url_rule(
 def download_file(name):
     return send_from_directory(app.config["UPLOAD_FOLDER"], name)
 
+
+@app.route('/fig', methods=['GET', 'POST'])
+def fig():
+    import figure
+    return render_template("fig.html")
+
+
 @app.route('/prediction/<name>', methods=['GET', 'POST'])
 def prediction(name):
     # fileName = request.args['fileName']
@@ -51,6 +58,7 @@ def prediction(name):
     #--------------------------- to get csv file location use function createCSV(DF,name)----------------
     # csvFile = createCSV(df, name+"predicted")
     df_html = df.to_html()
+
     return render_template('prediction.html', data=df_html)  
 
 

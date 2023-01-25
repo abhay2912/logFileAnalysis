@@ -55,7 +55,7 @@ def prediciton(name):
     # print(X) 
     df = pd.read_csv("C:\\Users\\user\\Documents\\LogfileJuypter\\regressionTree\\prediction\\{}.csv".format(name))
     x = dataPreporcessing(df)  
-    createCSV(x, "NumDataCSV")
+    # createCSV(x, "NumDataCSV")
     X=x[[0,2,3,4,5,6, 7]] #Coloumns included are :- ip, request, Status, size, Referer. 
     # load_model = pickle.load(open(filename,'rb'))
     load_model.predict(X)
